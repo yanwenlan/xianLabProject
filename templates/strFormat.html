@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>strFormat</title>
+</head>
+<body>
+    <h1> 格式转化工具 </h1>
+    <form id="form1" action="/strFormat" method="post" enctype="text/plain">
+        <table width="20%" border="1" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#CCFFCC" cellpadding="4"
+               align="left">
+            <tr>
+                <td>原字符串： <input type="text" name="textfield" size="70"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="submitForm('split0')">去除空格</button>
+                    <button type="button" onclick="submitForm('str_2_hex')">字符串转hex</button>
+                    <button type="button" onclick="submitForm('str_2_base64')">字符串->base64加密</button>
+                    <button type="button" onclick="submitForm('base64_2_str')">base64解密->字符串</button>
+                </td>
+            </tr>
+            <tr>
+                <td>执行结果: <input type="text" name="textfield" size="50"></td>
+            </tr>
+        </table>
+    </form>
+<script>
+    function submitForm(action){
+        const form = document.getElementById('form1');
+        form.action = '/' + action;
+        form.submit();
+    }
+</script>
+</body>
+</html>
