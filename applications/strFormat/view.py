@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, jsonify
+from utils import *
 
 bp = Blueprint('strFormat', __name__, template_folder='templates')
 
@@ -20,8 +21,8 @@ def strFormat1():
     print(data)
 
 
-@bp.route('/split0', methods=['POST'])
-def split0():
+@bp.route('/removeSpaces', methods=['POST'])
+def removeSpaces():
     action = request.form.get('action')
     data = request.form.get('data')
     print(action)
