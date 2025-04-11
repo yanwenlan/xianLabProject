@@ -1,4 +1,5 @@
 import base64
+import random
 
 
 def halRemoveSpaces(inStr) -> str:
@@ -42,10 +43,14 @@ def hal_base64_2_str(inStr) -> str:
 
 
 if __name__ == '__main__':
+    hex_chars_0 = '0123456789abcdef'
+    result1 = "".join(random.choice(hex_chars_0) for _ in range(10))
+    print(result1)
+    print(type(result1))
     # a = "ac 1f 09 ff fe 07 b1"
     # print(halRemoveSpaces(a))
-    b = "0840FF"
-    print(hal_hex_2_asc(b))
+    # b = "0840FF"
+    # print(hal_hex_2_asc(b))
     # print(hal_hex_2_base64(b))
     # c = "I0UjRQ=="
     # d = hal_base64_2_asc(c)
