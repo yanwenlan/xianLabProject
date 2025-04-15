@@ -1,23 +1,23 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-./xianlab-react-app/node_modules
-./xianlab-react-app/.pnp
-./xianlab-react-app.pnp.js
+xianlab-react-app/node_modules
+xianlab-react-app/.pnp
+xianlab-react-app.pnp.js
 
 # testing
-./xianlab-react-app/coverage
+xianlab-react-app/coverage
 
 # production
-./xianlab-react-app/build
+xianlab-react-app/build
 
 # misc
-./xianlab-react-app/.DS_Store
-./xianlab-react-app/.env.local
-./xianlab-react-app/.env.development.local
-./xianlab-react-app/.env.test.local
-./xianlab-react-app/.env.production.local
+xianlab-react-app/.DS_Store
+xianlab-react-app/.env.local
+xianlab-react-app/.env.development.local
+xianlab-react-app/.env.test.local
+xianlab-react-app/.env.production.local
 
-./xianlab-react-app/npm-debug.log*
-./xianlab-react-app/yarn-debug.log*
-./xianlab-react-app/yarn-error.log*
+xianlab-react-app/npm-debug.log*
+xianlab-react-app/yarn-debug.log*
+xianlab-react-app/yarn-error.log*
