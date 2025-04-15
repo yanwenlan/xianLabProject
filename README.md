@@ -6,9 +6,8 @@
 ## 启动flask
 1. 进入虚拟环境(如果存在flask虚拟环境的话)
 2. 安装requirements.txt中的库 `pip install -r requirements.txt`
-3. python app.py (测试启动)
+3. flask run --host=0.0.0.0 --port=5000 (测试启动)
 4. gunicorn -w 4 -b 0.0.0.0:5000 app:app &  (gunicorn启动)
-5. gunicorn -w 4 -b 127.0.0.1:5000 app:app &  (gunicorn启动，然后使用nginx代理)
 
 
 ## 辅助步骤
