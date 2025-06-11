@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Button } from '@mui/material';
+
 
 function StringConverter() {
   const [inputText, setInputText] = useState('');
@@ -25,7 +27,7 @@ function StringConverter() {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:5000/StringConverter', {
+      const response = await fetch('/StringConverter', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,59 +71,59 @@ function StringConverter() {
       </div>
 
       <div style={{display: 'flex', gap: '10px', marginBottom: '20px', flexWrap: 'wrap'}}>
-        <button
+        <Button
             type="button"
             onClick={() => performConversion('removeSpaces')}
             style={buttonStyle}
             disabled={isLoading}
         >
           {isLoading && activeFunction === 'removeSpaces' ? '处理中...' : '去除空格'}
-        </button>
+        </Button>
 
-        <button
+        <Button
             type="button"
             onClick={() => performConversion('hex_2_asc')}
             style={buttonStyle}
             disabled={isLoading}
         >
           {isLoading && activeFunction === 'hex_2_asc' ? '处理中...' : 'Hex转ASCII码'}
-        </button>
+        </Button>
 
-        <button
+        <Button
             type="button"
             onClick={() => performConversion('asc_2_hex')}
             style={buttonStyle}
             disabled={isLoading}
         >
           {isLoading && activeFunction === 'asc_2_hex' ? '处理中...' : '字符串转Hex'}
-        </button>
+        </Button>
 
-        <button
+        <Button
             type="button"
             onClick={() => performConversion('str_2_base64')}
             style={buttonStyle}
             disabled={isLoading}
         >
           {isLoading && activeFunction === 'str_2_base64' ? '处理中...' : '字符串→Base64加密'}
-        </button>
+        </Button>
 
-        <button
+        <Button
             type="button"
             onClick={() => performConversion('base64_2_str')}
             style={buttonStyle}
             disabled={isLoading}
         >
           {isLoading && activeFunction === 'base64_2_str' ? '处理中...' : 'Base64解密→字符串'}
-        </button>
+        </Button>
 
-        <button
+        <Button
             type="button"
             onClick={() => performConversion('gen_random_data')}
             style={buttonStyle}
             disabled={isLoading}
         >
           {isLoading && activeFunction === 'gen_random_data' ? '处理中...' : '生成输入长度的十六进制数(输出单位按字符数显示)'}
-        </button>
+        </Button>
 
       </div>
 

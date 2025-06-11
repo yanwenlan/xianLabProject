@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 function Home() {
   const navigate = useNavigate();
@@ -8,21 +9,21 @@ function Home() {
     <div className="home-page">
       <h1>多功能工具集</h1>
       <div className="tool-buttons">
-        <button
+        <Button
           onClick={() => navigate('/StringConverter')}
           className="tool-button"
         >
           字符串转换工具
-        </button>
+        </Button>
 
         {/* 可以添加更多工具按钮 */}
-        <button className="tool-button">
+        <Button className="tool-button">
           其他工具1 (待实现)
-        </button>
+        </Button>
 
-        <button className="tool-button">
+        <Button className="tool-button">
           其他工具2 (待实现)
-        </button>
+        </Button>
       </div>
     </div>
   );
