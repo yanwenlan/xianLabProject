@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from '@mui/material';
 
+// import Box from '@mui/material'
+import { Box } from '@mui/material';
+import Stack from "@mui/material/Stack";
+import TextField from '@mui/material/TextField';
+
 
 function StringConverter() {
   const [inputText, setInputText] = useState('');
@@ -55,77 +60,79 @@ function StringConverter() {
   return (
     <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
       <h2>字符串转换工具</h2>
-
-      <div style={{ marginBottom: '20px' }}>
-        <textarea
-          value={inputText}
-          onChange={handleInputChange}
-          placeholder="请输入要转换的文本..."
-          style={{
+      <TextField
+            label="请输入要转换的文本..."
+            value={inputText}
+            onChange={handleInputChange}
+            variant="outlined"
+            fullWidth
+            style={{
             width: '100%',
             height: '100px',
             padding: '10px',
             fontSize: '16px'
           }}
         />
-      </div>
 
-      <div style={{display: 'flex', gap: '10px', marginBottom: '20px', flexWrap: 'wrap'}}>
+      <Stack direction="column" spacing={2}>
         <Button
-            type="button"
+            variant="contained"
+            color="primary"
+            disableElevation
             onClick={() => performConversion('removeSpaces')}
-            style={buttonStyle}
             disabled={isLoading}
         >
           {isLoading && activeFunction === 'removeSpaces' ? '处理中...' : '去除空格'}
         </Button>
 
         <Button
-            type="button"
             onClick={() => performConversion('hex_2_asc')}
-            style={buttonStyle}
             disabled={isLoading}
+            variant="contained"
+            color="primary"
         >
           {isLoading && activeFunction === 'hex_2_asc' ? '处理中...' : 'Hex转ASCII码'}
         </Button>
-
         <Button
-            type="button"
+            variant="contained"
+            color="primary"
+            disableElevation
             onClick={() => performConversion('asc_2_hex')}
-            style={buttonStyle}
             disabled={isLoading}
         >
           {isLoading && activeFunction === 'asc_2_hex' ? '处理中...' : '字符串转Hex'}
         </Button>
 
         <Button
-            type="button"
+            variant="contained"
+            color="primary"
+            disableElevation
             onClick={() => performConversion('str_2_base64')}
-            style={buttonStyle}
             disabled={isLoading}
         >
           {isLoading && activeFunction === 'str_2_base64' ? '处理中...' : '字符串→Base64加密'}
         </Button>
-
         <Button
-            type="button"
+            variant="contained"
+            color="primary"
+            disableElevation
             onClick={() => performConversion('base64_2_str')}
-            style={buttonStyle}
             disabled={isLoading}
         >
           {isLoading && activeFunction === 'base64_2_str' ? '处理中...' : 'Base64解密→字符串'}
         </Button>
-
         <Button
-            type="button"
+            variant="contained"
+            color="primary"
+            disableElevation
             onClick={() => performConversion('gen_random_data')}
-            style={buttonStyle}
             disabled={isLoading}
         >
           {isLoading && activeFunction === 'gen_random_data' ? '处理中...' : '生成输入长度的十六进制数(输出单位按字符数显示)'}
         </Button>
+      </Stack>
 
-      </div>
+
 
       {error && (
           <div style={{color: 'red', marginBottom: '15px'}}>
@@ -152,17 +159,6 @@ function StringConverter() {
   );
 }
 
-// 按钮样式
-const buttonStyle = {
-  padding: '8px 16px',
-  backgroundColor: '#4CAF50',
-  color: 'white',
-  border: 'none',
-  borderRadius: '4px',
-  cursor: 'pointer',
-  fontSize: '14px',
-  flex: '1 0 auto',
-  minWidth: '120px'
-};
+
 
 export default StringConverter;
