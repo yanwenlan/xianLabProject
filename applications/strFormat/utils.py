@@ -39,19 +39,20 @@ def hal_base64_2_str(inStr) -> str:
     :return: 字符串
     """
     str_in = base64.b64decode(inStr)
-    return str_in.decode()
+    return str_in
 
 
 if __name__ == '__main__':
     hex_chars_0 = '0123456789abcdef'
     result1 = "".join(random.choice(hex_chars_0) for _ in range(10))
-    print(result1)
-    print(type(result1))
+    # print(result1)
+    # print(type(result1))
     # a = "ac 1f 09 ff fe 07 b1"
     # print(halRemoveSpaces(a))
     # b = "0840FF"
     # print(hal_hex_2_asc(b))
     # print(hal_hex_2_base64(b))
-    # c = "I0UjRQ=="
-    # d = hal_base64_2_asc(c)
+    c = "IAgYuiYw1x5diTioSmE2LsgPzgJ/yEptYYyQmzgTRq5W"
+    d = hal_base64_2_str(c)
+    print(d)
     # print(hal_asc_2_hex(d))

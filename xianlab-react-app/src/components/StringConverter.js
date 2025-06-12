@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from '@mui/material';
+
 // import Box from '@mui/material'
 import { Box } from '@mui/material';
 import Stack from "@mui/material/Stack";
 import TextField from '@mui/material/TextField';
+
 
 function StringConverter() {
   const [inputText, setInputText] = useState('');
@@ -72,9 +74,7 @@ function StringConverter() {
           }}
         />
 
-      {/*<Box color="text.primary" clone>*/}
       <Stack direction="column" spacing={2}>
-      {/*<div style={{display: 'flex', gap: '10px', marginBottom: '20px', flexWrap: 'wrap'}}>*/}
         <Button
             variant="contained"
             color="primary"
@@ -93,7 +93,6 @@ function StringConverter() {
         >
           {isLoading && activeFunction === 'hex_2_asc' ? '处理中...' : 'Hex转ASCII码'}
         </Button>
-
         <Button
             variant="contained"
             color="primary"
@@ -113,7 +112,6 @@ function StringConverter() {
         >
           {isLoading && activeFunction === 'str_2_base64' ? '处理中...' : '字符串→Base64加密'}
         </Button>
-
         <Button
             variant="contained"
             color="primary"
@@ -123,7 +121,6 @@ function StringConverter() {
         >
           {isLoading && activeFunction === 'base64_2_str' ? '处理中...' : 'Base64解密→字符串'}
         </Button>
-
         <Button
             variant="contained"
             color="primary"
@@ -133,10 +130,8 @@ function StringConverter() {
         >
           {isLoading && activeFunction === 'gen_random_data' ? '处理中...' : '生成输入长度的十六进制数(输出单位按字符数显示)'}
         </Button>
-
-      {/*</div>*/}
-      {/*</Box>*/}
       </Stack>
+
 
 
       {error && (
@@ -163,6 +158,7 @@ function StringConverter() {
     </div>
   );
 }
+
 
 
 export default StringConverter;
